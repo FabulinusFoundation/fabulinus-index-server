@@ -1,0 +1,4 @@
+.image-responsive img:hover {
+    box-shadow: 0px 0px 10px 2px #2284F2;
+    border-radius: 5px;
+}
