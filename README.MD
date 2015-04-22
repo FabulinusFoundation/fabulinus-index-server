@@ -1,4 +1,4 @@
-#fabulinus-index-server
+#Fabulinus Index Server
 Simple server to provide an index page for the Fabulinus system.
 
 The Wikipedia logo and the KA-Lite logo are used under the Creative Common license. 
