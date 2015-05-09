@@ -1,0 +1,8 @@
+{
+    "id"          : "en",
+    "description" : "English",
+    "flag"        : "images/flags/us.png",
+    "strings"     : {
+        "welcome" : "Welcome to Fabulinus. Start learning by using KA-Lite or browse Wikipedia for some interesting articles!"
+    }
+}
