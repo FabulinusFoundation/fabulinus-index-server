@@ -4,7 +4,7 @@ var morgan  = require('morgan');
 var path    = require('path');
 var fs      = require('fs');
 
-var port      = process.env.NODE_PORT || 80;
+var port      = process.env.NODE_PORT || 3000;
 
 var app = express();
 
