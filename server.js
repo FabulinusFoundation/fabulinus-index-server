@@ -1,10 +1,10 @@
 var express = require('express');
-var favicon = require('serve-favicon');
+var favicon = require('connect-favicons');
 var morgan  = require('morgan');
 var path    = require('path');
 var fs      = require('fs');
 
-var host = '1.1.1.1';
+var host      = '1.1.1.1';
 var port      = process.env.NODE_PORT || 3000;
 var kaliteUrl = 'http://' + host + ':8008';
 var wikiUrl   = 'http://' + host + '/wiki';
@@ -13,7 +13,8 @@ var app = express();
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon(path.join(__dirname, 'public', 'images', 'logo.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'images')));
+
 app.set('view engine', 'ejs');
 
 
