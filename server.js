@@ -4,7 +4,7 @@ var morgan  = require('morgan');
 var path    = require('path');
 var fs      = require('fs');
 
-var host = '192.168.0.105';
+var host = '1.1.1.1';
 var port      = process.env.NODE_PORT || 3000;
 var kaliteUrl = 'http://' + host + ':8008';
 var wikiUrl   = 'http://' + host + '/wiki';
