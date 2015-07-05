@@ -7,7 +7,7 @@ var fs      = require('fs');
 var host      = '1.1.1.1';
 var port      = process.env.NODE_PORT || 3000;
 var kaliteUrl = 'http://' + host + ':8008';
-var wikiUrl   = 'http://' + host + '/wiki';
+var wikiUrl   = 'http://' + host + ':8080';
 
 var app = express();
 
