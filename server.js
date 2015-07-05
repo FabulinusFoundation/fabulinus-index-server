@@ -1,9 +1,11 @@
 var express = require('express');
 var favicon = require('connect-favicons');
 var morgan  = require('morgan');
-var path    = require('path');
-var fs      = require('fs');
-var os 		= require('os');
+var path = require('path');
+var fs   = require('fs');
+var os 	 = require('os');
+var exec = require('child_process').exec;
+var bodyParser = require('body-parser');
 
 var port = process.env.NODE_PORT || 3000;
 var host = os.networkInterfaces()['wlan0'][0].address;
@@ -15,6 +17,9 @@ var app = express();
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images')));
+app.use(bodyParser.urlencoded({
+    extended : true
+}));
 
 app.set('view engine', 'ejs');
 
@@ -43,6 +48,26 @@ app.get('/', function (req, res) {
             wiki : wikiUrl
         });
     });
+});
+
+
+app.get('/shutdown', function(req, res){
+	res.render('shutdown.ejs');
+});
+
+
+app.post('/shutdown', function(req, res){
+	var user = req.body.username;
+	var password = req.body.password;
+	if (user == 'admin' && password == 'nkybwwrhsjtl'){
+		exec('echo test', function(error, stdout, stderr){
+			console.log(error);
+			console.log(stdout);
+			console.log(stderr);
+			res.render(stdout);
+		})
+	}
+	res.render('Username and/or password incorrect.');
 });
 
 
