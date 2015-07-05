@@ -1,0 +1,8 @@
+{
+    "id"          : "nl",
+    "description" : "Nederlands",
+    "flag"        : "images/flags/nl.png",
+    "strings"     : {
+        "welcome" : "Welkom bij Fabulinus. Begin met leren via KA Lite of gebruik Wikipedia om interessante artikelen te vinden."
+    }
+}
