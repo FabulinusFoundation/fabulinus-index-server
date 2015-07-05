@@ -57,17 +57,16 @@ app.get('/shutdown', function(req, res){
 
 
 app.post('/shutdown', function(req, res){
-	var user = req.body.username;
-	var password = req.body.password;
-	if (user == 'admin' && password == 'nkybwwrhsjtl'){
-		exec('echo test', function(error, stdout, stderr){
-			console.log(error);
-			console.log(stdout);
-			console.log(stderr);
-			res.render(stdout);
-		})
-	}
-	res.render('Username and/or password incorrect.');
+    var user = req.body.username;
+    var password = req.body.password;
+    if (user == 'admin' && password == 'nkybwwrhsjtl'){
+	console.log('before');
+	exec('sudo shutdown -h now', function(error, stdout, stderr){
+	    res.end('Shutting down! Please wait...');
+	})
+	return;
+    }
+    res.end('Username and/or password incorrect.');
 });
 
 
